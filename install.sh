@@ -53,6 +53,7 @@ brew cask install skype
 brew cask install vlc
 brew cask install transmission
 brew cask install viscosity
+brew cask install cleanmymac
 brew cask install font-victor-mono
 
 echo "Install node...";
