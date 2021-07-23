@@ -40,22 +40,22 @@ brew install noti
 brew install httpie
 
 echo "Brew Cask install...";
-brew cask install iterm2
-brew cask install google-chrome
-brew cask install firefox
-brew cask install microsoft-edge
-brew cask install slack
-brew cask install authy
-brew cask install postman
-brew cask install dropbox
-brew cask install grammarly
-brew cask install teamviewer
-brew cask install skype
-brew cask install vlc
-brew cask install transmission
-brew cask install viscosity
-brew cask install cleanmymac
-brew cask install font-victor-mono
+brew install --cask iterm2
+brew install --cask google-chrome
+brew install --cask firefox
+brew install --cask microsoft-edge
+brew install --cask slack
+brew install --cask authy
+brew install --cask postman
+brew install --cask dropbox
+brew install --cask grammarly
+brew install --cask teamviewer
+brew install --cask skype
+brew install --cask vlc
+brew install --cask transmission
+brew install --cask viscosity
+brew install --cask cleanmymac
+brew install --cask font-victor-mono
 
 echo "Install node...";
 n lts
@@ -75,3 +75,4 @@ echo "Setup italic in terminal..."
 tic -x xterm-256color-italic.terminfo
 
 
+{"mode":"full","isActive":false}
