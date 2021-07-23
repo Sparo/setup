@@ -5,15 +5,14 @@ brewinstall=(wget git vim zsh lazygit n go rg jq noti httpie)
 brewcask=(iterm2 google-chrome firefox microsoft-edge slack authy postman dropbox grammarly teamviewer skype vlc viscosity font-victor-mono)
 
 echo "Starting setup...";
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-echo "Starting setup...";
 brew=$(which -s brew);
 
 echo "Check for Homebrew..."
 if [[ $? != 0 ]]; then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.zprofile
+    eval $(/opt/homebrew/bin/brew shellenv)
 else
     echo "Updating Homebrew..."
     brew update;
