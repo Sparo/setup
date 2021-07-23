@@ -4,6 +4,8 @@ taps=("homebrew/core" "homebrew/cask-fonts" "jesseduffield/lazygit");
 brewinstall=(wget git vim zsh lazygit n go rg jq noti httpie)
 brewcask=(iterm2 google-chrome firefox microsoft-edge slack authy postman dropbox grammarly teamviewer skype vlc viscosity font-victor-mono)
 
+echo "Starting setup...";
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Starting setup...";
 brew=$(which -s brew);
