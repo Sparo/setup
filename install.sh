@@ -35,7 +35,7 @@ brew install awscli
 
 echo "Brew Cask install...";
 brew install --cask iterm2
-# brew install --cask docker
+brew install --cask docker
 brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask microsoft-edge
@@ -46,6 +46,7 @@ brew install --cask postman
 brew install --cask cleanmymac
 brew install --cask raycast
 brew install --cask todoist
+brew install --cask telegram
 brew install --cask font-victor-mono
 
 echo -e "Enter git user.name: \c"
@@ -58,13 +59,11 @@ read -r git_user_email
 git config --global user.email $git_user_email
 echo -e "Git user.email set as : $git_user_email"
 
-git config --global -l | cat
-
 echo "Setup fnm ..."
 echo 'eval "$(fnm env --use-on-cd)"' >> ~/.zshrc
 
-# echo "Install and setup zsh..."
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "Setup oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # echo "Download material design color scheme..."
 # curl -O https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors ~/Downloads
