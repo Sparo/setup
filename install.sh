@@ -1,23 +1,22 @@
 #!/bin/bash
 
-echo "Starting setup...";
-brew=$(which -s brew);
+echo "Starting setup..."
+brew=$(which -s brew)
 
-echo "Check for Homebrew..."
-if [[ $? != 0 ]]; then
-    echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.zprofile
-    eval $(/opt/homebrew/bin/brew shellenv)
+if [[ $? -eq 1 ]]; then
+	echo "Installing Homebrew..."
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	echo 'eval $(/opt/homebrew/bin/brew shellenv)' >>/Users/$USER/.zprofile
+	eval $(/opt/homebrew/bin/brew shellenv)
 else
-    echo "Updating Homebrew..."
-    brew update;
-    echo "Upgrding Homebrew..."
-    brew upgrade;
+	echo "Updating Homebrew..."
+	brew update
+	echo "Upgrding Homebrew..."
+	brew upgrade
 fi
 
 # exit 0;
-echo "Brew install...";
+echo "Brew install..."
 brew install wget
 brew install git
 brew install neovim
@@ -33,7 +32,7 @@ brew install jless
 brew install ansible
 brew install awscli
 
-echo "Brew Cask install...";
+echo "Brew Cask install..."
 brew install --cask iterm2
 brew install --cask docker
 brew install --cask google-chrome
@@ -47,7 +46,6 @@ brew install --cask cleanmymac
 brew install --cask raycast
 brew install --cask todoist
 brew install --cask telegram
-brew install --cask font-victor-mono
 
 echo -e "Enter git user.name: \c"
 read -r git_user_name
@@ -60,13 +58,14 @@ git config --global user.email $git_user_email
 echo -e "Git user.email set as : $git_user_email"
 
 echo "Setup fnm ..."
-echo 'eval "$(fnm env --use-on-cd)"' >> ~/.zshrc
+echo 'eval "$(fnm env --use-on-cd)"' >>~/.zshrc
 
 echo "Setup oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# echo "Download material design color scheme..."
-# curl -O https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors ~/Downloads
+echo "Setup nvim LazyVim"
+git clone https://github.com/LazyVim/starter ~/.config/nvim
 
-# echo "Setup italic in terminal..."
-# tic -x xterm-256color-italic.terminfo
+echo "Install Inconsolata LGC Nerd font"
+brew tap homebrew/cask-fonts
+brew install --cask font-inconsolata-lgc-nerd-font
