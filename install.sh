@@ -71,3 +71,4 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 echo "Install Inconsolata LGC Nerd font"
 brew tap homebrew/cask-fonts
 brew install --cask font-inconsolata-lgc-nerd-font
+brew install --cask font-intone-mono-nerd-font
